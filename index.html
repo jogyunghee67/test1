@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>함께 즐거운 하루</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f7f6ef; color: #24392e; font-family: system-ui, sans-serif; font-size: 18px; line-height: 1.65; }
+    .wrap { width: min(100% - 40px, 760px); margin: auto; }
+    header { padding: 20px 0; border-bottom: 1px solid #dce4d9; font-weight: 750; }
+    .hero { padding: 68px 0 54px; }
+    .eyebrow { color: #527760; font-weight: 700; }
+    h1 { margin: 12px 0 20px; font-size: clamp(38px, 8vw, 62px); line-height: 1.15; letter-spacing: -.04em; }
+    .lead { max-width: 560px; color: #496052; font-size: 21px; }
+    .button { display: inline-block; margin-top: 18px; padding: 15px 25px; border-radius: 10px; background: #285c3e; color: white; font-weight: 750; text-decoration: none; }
+    .button[hidden] { display: none; }
+    .button:focus-visible, a:focus-visible { outline: 3px solid #cb8d3f; outline-offset: 4px; }
+    section { padding: 35px 0; }
+    h2 { margin: 0 0 18px; font-size: 28px; }
+    .card { padding: 24px; border: 1px solid #dce4d9; border-radius: 16px; background: #fff; }
+    dl { margin: 0; }
+    .row { display: grid; grid-template-columns: 105px 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid #edf0eb; }
+    .row:last-child { border: 0; }
+    dt { color: #587061; font-weight: 700; }
+    dd { margin: 0; font-weight: 650; }
+    .notice { color: #52685a; }
+    footer { margin-top: 35px; padding: 28px 0 40px; border-top: 1px solid #dce4d9; color: #617367; font-size: 16px; }
+    @media (max-width: 400px) { .row { grid-template-columns: 90px 1fr; } }
+  </style>
+</head>
+<body>
+  <header><div class="wrap">함께 즐거운 하루</div></header>
+  <main class="wrap">
+    <div class="hero">
+      <div class="eyebrow">홍성군 주말 걷기 모임</div>
+      <h1>우리 동네를<br>함께 걸어요</h1>
+      <p class="lead">주말에 홍성에서 가볍게 걷는 모임입니다. 처음 오시는 분도 편하게 함께해요.</p>
+      <a class="button" href="#apply">참가 신청 안내</a>
+    </div>
+    <section aria-labelledby="meeting-title">
+      <h2 id="meeting-title">모임 안내</h2>
+      <div class="card">
+        <dl>
+          <div class="row"><dt>언제</dt><dd>주말 · 정확한 날짜와 시간은 추후 안내</dd></div>
+          <div class="row"><dt>어디서</dt><dd>홍성군 내 · 만나는 장소는 추후 안내</dd></div>
+          <div class="row"><dt>걷는 시간</dt><dd>약 1시간</dd></div>
+          <div class="row"><dt>난이도</dt><dd>쉬움</dd></div>
+          <div class="row"><dt>참가비</dt><dd>무료</dd></div>
+          <div class="row"><dt>준비물</dt><dd>편한 운동화와 물</dd></div>
+        </dl>
+      </div>
+    </section>
+    <section id="apply" aria-labelledby="apply-title">
+      <h2 id="apply-title">참가 신청</h2>
+      <div class="card">
+        <p>신청할 때 이름과 연락처를 알려주세요.</p>
+        <p class="notice" id="application-status">참가 신청을 준비하고 있어요. 신청 안내는 추후 이곳에 올릴게요.</p>
+        <a class="button" id="application-link" hidden>참가 신청하기</a>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap">함께 즐거운 하루 · 홍성군</div></footer>
+  <script>
+    // 구글 설문지 주소가 준비되면 따옴표 안에 붙여 넣으세요.
+    const applicationUrl = '';
+    if (applicationUrl) {
+      const link = document.getElementById('application-link');
+      link.href = applicationUrl;
+      link.hidden = false;
+      document.getElementById('application-status').textContent = '아래 버튼을 눌러 신청서를 작성해 주세요.';
+    }
+  </script>
+</body>
+</html>
